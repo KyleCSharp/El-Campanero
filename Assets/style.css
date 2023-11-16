@@ -1,15 +1,23 @@
 body {
-    margin: 0;
-    padding: 0;
-    background: url('Pics/background/Background-Image.png') no-repeat center center fixed;
-    background-color: #7a7a7a;
-    scroll-behavior: smooth;
-    text-align: center;
-    overflow-x: hidden;
-    font-family: "Comic Sans MS", "Comic Sans", "Chalkboard", "Chalkduster", "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow-x: hidden;
+  background-color: #7a7a7a;
+  font-family: 'Comic Sans MS', 'Comic Sans', 'Chalkboard', 'Chalkduster', 'Arial', sans-serif;
+}
 
-} 
+#background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Ensure the image is behind other content */
+}
 
+ 
 .navbar {
     background-color: white;
     display: flex;
@@ -53,22 +61,23 @@ body {
     opacity: 0.8;
 }
 
-.background-div {
+.headerimages-div {
     position: relative;
     width: 100%;
     height: 500px;
     display: flex;
     overflow: hidden;
-    margin-bottom: 5px;
+    margin-bottom: 50px;
 }
 
-.background-div img {
+.headerimages-div img {
     flex: 1;
     height: 100%;
     object-fit: cover;
     width: 100%;
     overflow: hidden;
     padding: 5px;
+    
 }
 
 .centered-image {
@@ -97,7 +106,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 5px;
+    margin: 100px;
+    border-radius: 10px;
 }
 
 .about-us-div h1 {
@@ -115,7 +125,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 5px;
+    margin: 100px;
+    border-radius: 10px;
     
 }
 
@@ -153,6 +164,7 @@ body {
   max-width: 300px; /* Adjust the maximum width of each image */
   padding: 10px;
   grid-row: span 3; /* Stagger the images by making them span two rows */
+  
 }
   .fullscreen-image {
     position: fixed;
@@ -267,11 +279,11 @@ body {
   
 }
 @media only screen and (max-width: 1200px) {
-  .background-div img:not(.specific-image):not(:nth-child(2)) {
+  .headerimages-div img:not(.specific-image):not(:nth-child(2)) {
     display: none; /* Hide all images except the specific one and the second one */
   }
 
-  .background-div img:nth-child(2) {
+  .headerimages-div img:nth-child(2) {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -283,4 +295,142 @@ body {
     max-width: 100%; /* Set a max width to maintain aspect ratio */
     border-radius: 100%;
   }
+}
+/* Style for the popup */
+.contact-button {
+  background-color: #530707;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  transition: opacity 0.3s;
+}
+.contact-button:hover {
+  opacity: 0.8;
+}
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+  color: rgb(252, 252, 252);
+  animation: fadeInOut 0.5s ease; /* Use the fadeInOut animation for smooth effect */
+  opacity: 0;
+}
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:#6b332a;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.popup-overlay.show-popup {
+  display: block;
+  opacity: 1;
+}
+
+
+.message-container {
+  
+  margin-top: 10px;
+}
+
+
+textarea {
+  
+  width: 100%;
+  height: 150px;
+  
+}
+@keyframes fadeInOut {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Additional styles for the thank you page */
+.thank-you-container {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 600px;
+  background-color: #6b332a;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Additional styles for the back-to-home button */
+.back-home-button {
+  display: block;
+  color: white;
+  margin: 20px auto;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  background-color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.back-home-button:hover {
+  background-color: #555;
+}
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #6b332a;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  animation: spin 1s linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: none; /* Initially hide the spinner */
+  background-color: #333;
+  color: #fff; /* Color for the spinner icon (if applicable) */
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+.map iframe {
+  position:relative;
+  top: 0;
+  left: 0;
+  width: 1000px;
+  height: 200px;
+  border: 0; /* Removes the border around the iframe */
+
+ /* Adjust the map size for phones */
+ @media (max-width: 767px) {
+  width: 100%; /* Full width for phones */
+  height: auto; /* Height will adjust automatically based on aspect ratio */
+}
+}
+img {
+  border-radius: 20px; /* Adjust the value as needed */
 }
