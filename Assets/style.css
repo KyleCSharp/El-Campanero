@@ -100,7 +100,7 @@ body {
 .about-us-div {
     background-color: black;
     color: white;
-    height: 500px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -276,6 +276,30 @@ body {
     padding: 20px;
     
   }
+  .location-div {
+    background-color: white;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+    
+}
+.about-us-div {
+  background-color: black;
+  color: white;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+  border-radius: 10px;
+}
   
 }
 @media only screen and (max-width: 1200px) {
