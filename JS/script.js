@@ -86,11 +86,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   document.addEventListener("click", (event) => {
-    const contactButton = document.querySelector(".contact-button"); 
+    const navButton = document.querySelector(".nav-button"); 
     const popupOverlay = document.getElementById("popupOverlay");
     const closeButton = document.getElementById("closeButton");
   
-    if (event.target === contactButton) {
+    if (event.target === navButton) {
       popupOverlay.classList.add("show-popup"); 
     }
   

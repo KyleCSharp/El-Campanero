@@ -265,6 +265,11 @@ body {
     display: flex;
    
   }
+  .contact-button{flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+    display: flex;}
+  
   
   .nav-button {
     margin: 5px;
@@ -300,9 +305,11 @@ body {
   margin: 20px;
   border-radius: 10px;
 }
+
   
 }
 @media only screen and (max-width: 1200px) {
+  
   .headerimages-div img:not(.specific-image):not(:nth-child(2)) {
     display: none; /* Hide all images except the specific one and the second one */
   }
@@ -322,13 +329,14 @@ body {
 }
 /* Style for the popup */
 .contact-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
   background-color: #530707;
   color: white;
   text-decoration: none;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
-  margin-right: 10px;
   transition: opacity 0.3s;
 }
 .contact-button:hover {
