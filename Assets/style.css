@@ -250,7 +250,10 @@ body {
 }
 
 @media only screen and (max-width: 1000px) {
-  
+  .logo {
+    margin-left: 0; /* Center the logo on smaller screens */
+    padding-top: 5px;
+  }
     .navbar {
     flex-direction: column;
     height: auto;
@@ -303,6 +306,10 @@ body {
   
 }
 @media only screen and (max-width: 1200px) {
+  .logo {
+    margin-left: 0; /* Center the logo on smaller screens */
+    padding-top: 5px;
+  }
   .headerimages-div img:not(.specific-image):not(:nth-child(2)) {
     display: none; /* Hide all images except the specific one and the second one */
   }
